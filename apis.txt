@@ -1,0 +1,141 @@
+API's
+Calls of Rest Api's 
+1.GET -->To View or Get  
+2.POST -->To Update 
+3.PUT -->To Create 
+4.DELETE -->To delete
+
+
+--> first we have to generate a identity token
+-->Then we should run the following commands in gitbash
+
+cmVmdGtuOjAxOjAwMDAwMDAwMDA6OGJmVjJ1dnRENmd6UDAwMkhYNDdqVFhBMjNu --access toke
+
+-->curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6OGJmVjJ1dnRENmd6UDAwMkhYNDdqVFhBMjNu" -X GET "https://jfrogdev.site/artifactory/api/build/test2"
+to read the builds
+
+--> curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6OGJmVjJ1dnRENmd6UDAwMkhYNDdqVFhBMjNu" -X PUT "https://jfrogdev.site/artifactory/team1-maven-local/repo/docker"
+to create a folder and file
+
+--> curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6OGJmVjJ1dnRENmd6UDAwMkhYNDdqVFhBMjNu" -X GET "https://jfrogdev.site/artifactory/api/v2/repositories/team2-test-npm-remote"
+to read a repos
+
+-->curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6OGJmVjJ1dnRENmd6UDAwMkhYNDdqVFhBMjNu" -X GET "https://jfrogdev.site/artifactory/api/v2/security/permissions/users/user5"
+to read the users
+
+--> curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6OGJmVjJ1dnRENmd6UDAwMkhYNDdqVFhBMjNu" -X GET "https://jfrogdev.site/artifactory/api/system/configuration/webServer"
+to list the port router
+
+--> curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6OGJmVjJ1dnRENmd6UDAwMkhYNDdqVFhBMjNu" -X GET "https://jfrogdev.site/artifactory/api/security/apiKey"
+TO get a api key 
+
+
+https://www.jfrog.com/confluence/display/JFROG/JFrog+Platform+REST+API
+https://www.jfrog.com/confluence/display/JFROG/Artifactory+REST+API+V2	
+
+
+to create folder in jfrog:
+1)curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw " -X PUT "https://jfrogdev.site/artifactory/api/team1-test-docker-local/team1/test2" 
+
+2)curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/system/license" 
+
+3)system/configuration to get all the information about the instance system/license 
+
+4)to get users list:
+curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/users"
+
+5)to get the information of the specified repository:
+curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/v2/repositories/team1-test-maven-local"
+
+6)to list all repositories:
+curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/repositories"
+
+7)to get information about the specified build name and build number:
+$ curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/build/test2/22" 
+
+8)to get build info:
+$ curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/build" 
+
+9)Get Reverse Proxy Configuration
+$ curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/system/configuration/webServer" 
+
+10)to get the storage info
+curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/storageinfo"
+
+
+to get api key
+11)curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/security/apiKey" 
+
+to get the list of permissions
+12)curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/v2/security/permissions/" 
+
+to check the permissions of the specified user
+curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/v2/security/permissions/users/user1" 
+
+to get the specified project details by giving projectkey
+14)$  curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/access/api/v1/projects/hp" 
+
+to get all the projects
+15) $  curl -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/access/api/v1/projects"
+
+
+
+For JQ
+
+16)curl -s -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/users" | jq .
+
+
+17)-s -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/users" | jq '.[] | .name'
+
+18)curl -s -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/users" | jq '.[] | [.name, .email] | @csv'
+
+19) curl -s -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/users" | jq -r '.[] | [.name, .email] | @csv'
+
+20) curl -s -H "Authorization: Bearer cmVmdGtuOjAxOjAwMDAwMDAwMDA6TDU5M3NNOFFKdDlVUnVKcDBHNU1pR1RGY0dw" -X GET "https://jfrogdev.site/artifactory/api/v2/security/permissions/users/sahana" | jq -r '.[] | [.name,.repo]'
+
+-->if we have space in middel of the word we should use the %20 in the middle of the word
+
+
+
+we can get by chrome
+https://jfrogdev.site/artifactory/api/users
+
+
+import com.onresolve.jira.groovy.user.FieldBehaviours
+import org.apache.log4j.Logger
+import org.apache.log4j.Level
+import groovy.transform.BaseScript 
+
+@BaseScript FieldBehaviours fieldBehaviours 
+
+// Multi Select List field
+def multiSelectField = getFieldByName("customfield1")
+// Multi Text Line field
+def multiLine1 = getFieldByName('customfield2')
+def customfield3 = getFieldByName('customfield3')
+// Value for a multi-select field will always be a list even if "None" is selected
+def multiSelectFieldValue = multiSelectField.value as List
+def multiValue = multiSelectFieldValue.equals("A") 
+
+if(multiSelectFieldValue == ["A"] ){    
+multiLine1.setHidden(false);    
+multiLine1.setRequired(true);    
+customfield3.setHidden(false);    
+customfield3.setReadOnly(true); 
+
+}
+else if(multiSelectFieldValue == ["B"]){    
+multiLine1.setReadOnly(false);    
+multiLine1.setRequired(true);  
+   
+customfield3.setHidden(true);
+}
+else if(multiSelectFieldValue == ["C"]){    
+multiLine1.setRequired(false)    
+multiLine1.setReadOnly(true)    
+customfield3.setHidden(true);
+}
+else if(multiSelectFieldValue == ["D"]){    
+multiLine1.setHidden(true)    
+customfield3.setHidden(true)
+}
